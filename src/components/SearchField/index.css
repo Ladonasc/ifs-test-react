@@ -1,0 +1,23 @@
+.searchField {
+	position: relative;
+}
+
+.searchField::before {
+	content: '⚲';
+	position: absolute;
+	left: 16px;
+	top: -1px;
+	display: inline-block;
+	transform: rotate(45deg);
+	font-size: 20px;
+	color: #636263;
+}
+
+.searchField input {
+	padding-left: 25px;
+	height: 26px;
+	border: none;
+	border-radius: 3px;
+	background-color: #49494b;
+	color: #fff;
+}

@@ -10,33 +10,39 @@ import styles from './index.css'
 export default class Home extends Component {
 
     state = {
-        data: null
+        data: [],
+        currentFilter: ''
     }
 
     componentDidMount() {
 
-        // do your xhr request here (http://localhost:5000/category)
         request
             .get('http://localhost:5000/category')
             .end((err, res) => {
                 if (res) {
-                    console.log('res', res.body) // eslint-disable-line
+                    this.setState({
+                        data: res.body
+                    });
                 }
             });
     }
 
     render() {
-
         return (
             <div className={ styles.home }>
                 <h1>ifs test react</h1>
                 <SelectFilter
-                    filters={[]}
+                    filters={this.state.data}
                     onChange={(currentFilter) => {
-                        console.log('currentFilter', currentFilter) // eslint-disable-line
+                        this.setState({
+                            currentFilter: currentFilter
+                        });
                     }}
                     rootStyle={ styles.filter }
                 />
+                <div className={ styles.currentFilter }>
+                    Filter by: {this.state.currentFilter}
+                </div>
             </div>
         )
     }

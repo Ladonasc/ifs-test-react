@@ -1,5 +1,29 @@
 .selectfilter {
-  border: solid 1px var(--white);
   display: inline-block;
-  padding: 5px;
+  padding: 5px 0;
+  width: 175px;
+  background-color: #222;
+}
+
+.label {
+	position: relative;
+	padding: 5px 8px;
+	cursor: pointer;
+}
+
+.close {
+	display: none;
+}
+
+.open  {
+	display: block;
+}
+
+.arrow {
+	position: absolute;
+	right: 3px;
+	top: 7px;
+	color: #a91922;
+	font-size: 12px;
+	padding-left: 10px;
 }

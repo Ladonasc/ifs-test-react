@@ -1,1 +1,6 @@
-
+.currentFilter {
+	display: inline-block;
+	margin-left: 35px;
+	vertical-align: top; 
+	padding-top: 12px;
+}
